@@ -1,0 +1,14 @@
+[Unit]
+Description=NetworkManager HTTP Switcher Service
+After=network.target dbus.service
+
+[Service]
+Type=simple
+User=root 
+WorkingDirectory=/home/Mihai
+ExecStart=/usr/bin/python3 /home/Mihai/network_service.py
+Restart=always
+Environment=PYTHONUNBUFFERED=1
+
+[Install]
+WantedBy=multi-user.target
