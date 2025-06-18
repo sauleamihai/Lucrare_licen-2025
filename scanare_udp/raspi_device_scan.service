@@ -1,0 +1,13 @@
+[Unit]
+Description=Pi WLAN0 Scanner + System Stats
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=simple
+ExecStart=/usr/bin/python3 /home/Mihai/scan_devices.py
+Restart=always 
+
+[Install]
+WantedBy=multi-user.target
+
