@@ -1,0 +1,14 @@
+[Unit]
+Description=Flask API Service for Image Captioning
+After=network.target
+
+[Service]
+Type=simple
+User=root
+WorkingDirectory=/home/Mihai/gpt_api
+ExecStart=/usr/bin/python3 /home/Mihai/gpt_api/flask_api.py
+Restart=always
+EnvironmentFile=/home/Mihai/gpt_api/.env
+
+[Install]
+WantedBy=multi-user.target

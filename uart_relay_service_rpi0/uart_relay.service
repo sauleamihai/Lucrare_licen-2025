@@ -1,0 +1,14 @@
+[Unit]
+Description=UART Relay and TTS Announcement Service
+After=multi-user.target
+
+[Service]
+Type=simple
+ExecStart=/usr/bin/python3 /usr/local/bin/uart_relay_service.py
+Restart=on-failure
+User=root
+Group=root
+Environment=PYTHONUNBUFFERED=1
+
+[Install]
+WantedBy=multi-user.target
