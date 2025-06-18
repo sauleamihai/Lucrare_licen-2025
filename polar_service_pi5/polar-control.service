@@ -1,0 +1,13 @@
+[Unit]
+Description=Polar Control HTTP API (starts/stops polar container via JSON)
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=simple
+WorkingDirectory=/home/pi
+ExecStart=/usr/bin/python3 /home/Mihai/polar_control.py
+Restart=on-failure
+
+[Install]
+WantedBy=multi-user.target
