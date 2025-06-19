@@ -133,7 +133,7 @@ if RANSAC_IT <= 0:
     sys.exit(1)
 
 if VERBOSE or DEBUG:
-    print(f"📋 CONFIGURATION:")
+    print(f"   CONFIGURATION:")
     print(f"   Network: {ESP32_IP}:{ESP32_PORT}")
     print(f"   Timeouts: ACK={ACK_TIMEOUT}s, Interval={SEND_INTERVAL}s")
     print(f"   Depth range: {DEPTH_MIN:.2f}m - {DEPTH_MAX:.2f}m")
