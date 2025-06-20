@@ -175,7 +175,7 @@ class PerformanceTestSuite:
         scenarios = scenarios or TEST_SCENARIOS
         
         for scenario_name, scenario_desc in scenarios.items():
-            print(f"\n🧪 Testing scenario: {scenario_name.upper()}")
+            print(f"\nTesting scenario: {scenario_name.upper()}")
             print(f"Description: {scenario_desc}")
             print("-" * 40)
             
@@ -240,9 +240,9 @@ class PerformanceTestSuite:
             print("  Performing IMU calibration...")
             calibration_frames = self._calibrate_imu(pipe, imu_calibration)
             if imu_calibration.is_calibrated:
-                print(f"  ✅ IMU calibrated in {calibration_frames} frames")
+                print(f"IMU calibrated in {calibration_frames} frames")
             else:
-                print("  ⚠️ IMU calibration failed")
+                print("IMU calibration failed")
         
         # Main test loop
         frames_processed = 0
@@ -448,10 +448,10 @@ class PerformanceTestSuite:
         comp = result['comparison']
         
         if 'error' in comp:
-            print(f"  ❌ {comp['error']}")
+            print(f"{comp['error']}")
             return
         
-        print(f"\n  📊 Results for {scenario_name.upper()}:")
+        print(f"\n Results for {scenario_name.upper()}:")
         print(f"     Speed improvement: {comp['speed_improvement_percent']:+.1f}%")
         print(f"     Accuracy improvement: {comp['accuracy_improvement_percent']:+.1f}%") 
         print(f"     Stability improvement: {comp['stability_improvement_percent']:+.1f}%")
@@ -459,14 +459,14 @@ class PerformanceTestSuite:
         
         # Highlight significant improvements
         if comp['speed_improvement_percent'] > 20:
-            print("     🚀 Significant speed improvement!")
+            print(" Significant speed improvement!")
         if comp['stability_improvement_percent'] > 15:
             print("     🎯 Significant stability improvement!")
     
     def _generate_final_report(self):
         """Generate comprehensive final report"""
         print("\n" + "=" * 60)
-        print("🏆 FINAL PERFORMANCE REPORT")
+        print("FINAL PERFORMANCE REPORT")
         print("=" * 60)
         
         # Calculate overall statistics
@@ -487,7 +487,7 @@ class PerformanceTestSuite:
             print(f"   Average accuracy improvement: {np.mean(overall_accuracy_improvements):+.1f}%")
             print(f"   Average stability improvement: {np.mean(overall_stability_improvements):+.1f}%")
             
-            print(f"\n🎯 BEST PERFORMANCE SCENARIOS FOR IMU:")
+            print(f"\nBEST PERFORMANCE SCENARIOS FOR IMU:")
             # Find best scenarios for each metric
             speed_best = max(self.results.items(), 
                            key=lambda x: x[1]['comparison'].get('speed_improvement_percent', -999))
@@ -503,8 +503,8 @@ class PerformanceTestSuite:
         # Save detailed results
         self._save_results()
         
-        print(f"\n💾 Detailed results saved to: performance_test_results_{datetime.now().strftime('%Y%m%d_%H%M%S')}.json")
-        print("\n✅ Performance testing completed!")
+        print(f"\nDetailed results saved to: performance_test_results_{datetime.now().strftime('%Y%m%d_%H%M%S')}.json")
+        print("\nPerformance testing completed!")
     
     def _save_results(self):
         """Save results to JSON file"""
