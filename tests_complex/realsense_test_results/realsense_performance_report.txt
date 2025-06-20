@@ -1,0 +1,91 @@
+================================================================================
+INTEL REALSENSE LIVE ALGORITHM PERFORMANCE REPORT
+================================================================================
+
+SESSION INFORMATION:
+  Session ID: live_test_1749831055
+  Duration: 400.04 seconds
+  Total Frames Processed: 8634
+  Actual Capture FPS: 21.58
+
+CAMERA CONFIGURATION:
+  Resolution: 424x240
+  Target FPS: 30
+  Focal Length: fx=208.5, fy=208.5
+  Principal Point: (212.6, 123.1)
+  Depth Scale: 0.0010000000474974513
+
+ALGORITHM PERFORMANCE SUMMARY:
+--------------------------------------------------
+1. IRLS ALGORITHM
+   Performance Score: 0.557
+   Average Processing Time: 3.51 +/- 0.62 ms
+   Theoretical Max FPS: 284.6
+   Success Rate: 38.3%
+   Ground Coverage: 13.9%
+   Frame Drops (>33ms): 0
+   Memory Usage: 0.1 MB
+   Real-time Assessment: [ACCEPTABLE] for some real-time applications
+
+2. V-DISPARITY ALGORITHM
+   Performance Score: 0.535
+   Average Processing Time: 3.59 +/- 0.66 ms
+   Theoretical Max FPS: 278.3
+   Success Rate: 31.6%
+   Ground Coverage: 13.3%
+   Frame Drops (>33ms): 0
+   Memory Usage: 0.0 MB
+   Real-time Assessment: [ACCEPTABLE] for some real-time applications
+
+3. RANSAC ALGORITHM
+   Performance Score: 0.518
+   Average Processing Time: 6.16 +/- 1.18 ms
+   Theoretical Max FPS: 162.4
+   Success Rate: 26.7%
+   Ground Coverage: 22.4%
+   Frame Drops (>33ms): 0
+   Memory Usage: 0.1 MB
+   Real-time Assessment: [ACCEPTABLE] for some real-time applications
+
+DETAILED ANALYSIS:
+------------------------------
+
+Fastest Algorithm: IRLS (284.6 FPS)
+Most Reliable: IRLS (38.3% success)
+Most Consistent: IRLS (consistency: 1.39)
+Lowest Memory Usage: V-Disparity (0.0 MB)
+
+REALSENSE-SPECIFIC INSIGHTS:
+----------------------------------------
+
+Environment Characteristics:
+  Average Ground Coverage: 16.5%
+  Average Inlier Points: 14532
+  WARNING: Low ground coverage detected - may indicate complex environment
+
+RECOMMENDATIONS:
+--------------------
+
+BEST OVERALL CHOICE: IRLS
+   Recommended for balanced performance with RealSense cameras
+
+Specific Use Cases:
+  Real-time Robotics: Consider optimizing parameters or reducing resolution
+  High Accuracy Applications: IRLS
+  Resource-Constrained Systems: IRLS
+
+PARAMETER TUNING SUGGESTIONS:
+----------------------------------------
+
+IRLS:
+  - Adjust Tukey constant (try 0.06-0.12 range)
+  - Consider filtering input points to bottom 25% by height
+
+RANSAC:
+  - Increase tolerance (try 0.08-0.12m for RealSense noise)
+  - Pre-filter candidate points to improve convergence
+
+V-Disparity:
+  - Verify stereo baseline parameter matches camera
+  - Check depth range filtering (0.2-8.0m recommended)
+  - Ensure proper camera calibration for best results

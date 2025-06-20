@@ -1,0 +1,11 @@
+{
+  "IRLS": {
+    "avg_processing_time_ms": 3.5131293027566857,
+    "std_processing_time_ms": 0.6181320754454109,
+    "max_processing_time_ms": 12.694799999991346,
+    "theoretical_fps": 284.6465113639054,
+    "success_rate": 0.38267315265230484,
+    "avg_ground_coverage": 13.90246502611657,
+    "avg_inliers": 12112.007566585957,
+    "avg_memory_usage_mb": 0.09858870092077832,
+    "frame_drops": 
