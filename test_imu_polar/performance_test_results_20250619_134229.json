@@ -1,0 +1,407 @@
+{
+  "static": {
+    "with_imu": {
+      "name": "static_IMU",
+      "total_frames": 1000,
+      "successful_detections": 1000,
+      "success_rate": 1.0,
+      "detection_failures": 0,
+      "avg_detection_time": 81.2278208732605,
+      "min_detection_time": 5.633115768432617,
+      "max_detection_time": 688.1833076477051,
+      "std_detection_time": 94.21506962604865,
+      "median_detection_time": 13.30721378326416,
+      "method_distribution": {
+        "prosac": 457,
+        "refinement": 86,
+        "refinement_imu": 457
+      },
+      "primary_method": "prosac",
+      "avg_stability": 0.05814149125839752,
+      "angle_stability_std": 0.19915333518194067,
+      "position_stability_std": 0.6878993334572564,
+      "avg_confidence": 0.07287319728786949,
+      "confidence_std": 0.046917257854989666,
+      "avg_imu_confidence": 0.8930656114203053,
+      "avg_tilt_angle": 76.29458250956974,
+      "max_tilt_angle": 79.79891713526493,
+      "imu_ready_rate": 0.913
+    },
+    "without_imu": {
+      "name": "static_No-IMU",
+      "total_frames": 1000,
+      "successful_detections": 1000,
+      "success_rate": 1.0,
+      "detection_failures": 0,
+      "avg_detection_time": 7.702665090560913,
+      "min_detection_time": 4.997491836547852,
+      "max_detection_time": 107.18417167663574,
+      "std_detection_time": 4.1901296925536675,
+      "median_detection_time": 7.001757621765137,
+      "method_distribution": {
+        "prosac": 2,
+        "refinement": 998
+      },
+      "primary_method": "refinement",
+      "avg_stability": 0.6974830109901932,
+      "angle_stability_std": 0.044707404475702296,
+      "position_stability_std": 0.01794203567768826,
+      "avg_confidence": 0.1266940580467938,
+      "confidence_std": 0.00812744047907161
+    },
+    "comparison": {
+      "speed_improvement_percent": -954.5417711695607,
+      "accuracy_improvement_percent": 0.0,
+      "stability_improvement_percent": -91.66409929098403,
+      "confidence_improvement_percent": -42.48096681775387,
+      "imu_method_diversity": 3,
+      "no_imu_method_diversity": 2
+    }
+  },
+  "tilt_slow": {
+    "with_imu": {
+      "name": "tilt_slow_IMU",
+      "total_frames": 1000,
+      "successful_detections": 1000,
+      "success_rate": 1.0,
+      "detection_failures": 0,
+      "avg_detection_time": 47.29225206375122,
+      "min_detection_time": 6.000518798828125,
+      "max_detection_time": 517.8310871124268,
+      "std_detection_time": 96.35299914532408,
+      "median_detection_time": 12.282013893127441,
+      "method_distribution": {
+        "prosac": 119,
+        "refinement": 764,
+        "refinement_imu": 117
+      },
+      "primary_method": "refinement",
+      "avg_stability": 0.4487768091145485,
+      "angle_stability_std": 0.28761098093029636,
+      "position_stability_std": 0.5154664176843093,
+      "avg_confidence": 0.08457810694825657,
+      "confidence_std": 0.028117324692597097,
+      "avg_imu_confidence": 0.4648928715244288,
+      "avg_tilt_angle": 80.50661479054622,
+      "max_tilt_angle": 145.29443889035394,
+      "imu_ready_rate": 0.234
+    },
+    "without_imu": {
+      "name": "tilt_slow_No-IMU",
+      "total_frames": 1000,
+      "successful_detections": 1000,
+      "success_rate": 1.0,
+      "detection_failures": 0,
+      "avg_detection_time": 10.244691133499146,
+      "min_detection_time": 4.996299743652344,
+      "max_detection_time": 171.21529579162598,
+      "std_detection_time": 6.0716145733576035,
+      "median_detection_time": 10.252237319946289,
+      "method_distribution": {
+        "prosac": 1,
+        "refinement": 999
+      },
+      "primary_method": "refinement",
+      "avg_stability": 0.5672647921625213,
+      "angle_stability_std": 0.012220333126190168,
+      "position_stability_std": 0.027447816258096065,
+      "avg_confidence": 0.07492612494759458,
+      "confidence_std": 0.015870555843287275
+    },
+    "comparison": {
+      "speed_improvement_percent": -361.6269192256089,
+      "accuracy_improvement_percent": 0.0,
+      "stability_improvement_percent": -20.887596883330996,
+      "confidence_improvement_percent": 12.881998111356824,
+      "imu_method_diversity": 3,
+      "no_imu_method_diversity": 2
+    }
+  },
+  "tilt_fast": {
+    "with_imu": {
+      "name": "tilt_fast_IMU",
+      "total_frames": 1000,
+      "successful_detections": 1000,
+      "success_rate": 1.0,
+      "detection_failures": 0,
+      "avg_detection_time": 16.776432752609253,
+      "min_detection_time": 4.766225814819336,
+      "max_detection_time": 278.57398986816406,
+      "std_detection_time": 41.075392040122374,
+      "median_detection_time": 9.000301361083984,
+      "method_distribution": {
+        "prosac": 38,
+        "refinement": 928,
+        "refinement_imu": 34
+      },
+      "primary_method": "refinement",
+      "avg_stability": 0.49859226733579165,
+      "angle_stability_std": 0.18107229375537137,
+      "position_stability_std": 0.4103307764451693,
+      "avg_confidence": 0.06756233602389429,
+      "confidence_std": 0.024002400083166734,
+      "avg_imu_confidence": 0.30165186578645076,
+      "avg_tilt_angle": 81.05026592759877,
+      "max_tilt_angle": 159.49371668255674,
+      "imu_ready_rate": 0.07
+    },
+    "without_imu": {
+      "name": "tilt_fast_No-IMU",
+      "total_frames": 1000,
+      "successful_detections": 1000,
+      "success_rate": 1.0,
+      "detection_failures": 0,
+      "avg_detection_time": 7.00261116027832,
+      "min_detection_time": 2.9976367950439453,
+      "max_detection_time": 115.22817611694336,
+      "std_detection_time": 3.8472703787296565,
+      "median_detection_time": 6.271839141845703,
+      "method_distribution": {
+        "prosac": 1,
+        "refinement": 999
+      },
+      "primary_method": "refinement",
+      "avg_stability": 0.5135332764298469,
+      "angle_stability_std": 0.013398583740443512,
+      "position_stability_std": 0.03491562642415522,
+      "avg_confidence": 0.07731947986013554,
+      "confidence_std": 0.024733844694969403
+    },
+    "comparison": {
+      "speed_improvement_percent": -139.57395846526583,
+      "accuracy_improvement_percent": 0.0,
+      "stability_improvement_percent": -2.909452956569279,
+      "confidence_improvement_percent": -12.619256950371508,
+      "imu_method_diversity": 3,
+      "no_imu_method_diversity": 2
+    }
+  },
+  "rotation": {
+    "with_imu": {
+      "name": "rotation_IMU",
+      "total_frames": 1000,
+      "successful_detections": 1000,
+      "success_rate": 1.0,
+      "detection_failures": 0,
+      "avg_detection_time": 30.89599895477295,
+      "min_detection_time": 2.290487289428711,
+      "max_detection_time": 183.72154235839844,
+      "std_detection_time": 46.292890504066136,
+      "median_detection_time": 8.211135864257812,
+      "method_distribution": {
+        "prosac": 221,
+        "refinement": 778,
+        "hough": 1
+      },
+      "primary_method": "refinement",
+      "avg_stability": 0.26531216754660847,
+      "angle_stability_std": 0.4243560474937149,
+      "position_stability_std": 1.1066176429435588,
+      "avg_confidence": 0.08462374016177737,
+      "confidence_std": 0.08057023227696129
+    },
+    "without_imu": {
+      "name": "rotation_No-IMU",
+      "total_frames": 1000,
+      "successful_detections": 1000,
+      "success_rate": 1.0,
+      "detection_failures": 0,
+      "avg_detection_time": 29.378185749053955,
+      "min_detection_time": 2.992391586303711,
+      "max_detection_time": 188.0800724029541,
+      "std_detection_time": 40.214243204602646,
+      "median_detection_time": 7.167220115661621,
+      "method_distribution": {
+        "prosac": 278,
+        "refinement": 722
+      },
+      "primary_method": "refinement",
+      "avg_stability": 0.21221183175336317,
+      "angle_stability_std": 0.4472959533763095,
+      "position_stability_std": 1.1881646310822764,
+      "avg_confidence": 0.08213933062589526,
+      "confidence_std": 0.07678202027332427
+    },
+    "comparison": {
+      "speed_improvement_percent": -5.166463370760978,
+      "accuracy_improvement_percent": 0.0,
+      "stability_improvement_percent": 25.022325736747597,
+      "confidence_improvement_percent": 3.0246284172893834,
+      "imu_method_diversity": 3,
+      "no_imu_method_diversity": 2
+    }
+  },
+  "translation": {
+    "with_imu": {
+      "name": "translation_IMU",
+      "total_frames": 1000,
+      "successful_detections": 1000,
+      "success_rate": 1.0,
+      "detection_failures": 0,
+      "avg_detection_time": 7.605723142623901,
+      "min_detection_time": 3.240823745727539,
+      "max_detection_time": 106.5065860748291,
+      "std_detection_time": 9.02030574646716,
+      "median_detection_time": 6.353139877319336,
+      "method_distribution": {
+        "prosac": 17,
+        "refinement": 983
+      },
+      "primary_method": "refinement",
+      "avg_stability": 0.6264443703359971,
+      "angle_stability_std": 0.10784172297459388,
+      "position_stability_std": 0.2405783899895336,
+      "avg_confidence": 0.0853373412804975,
+      "confidence_std": 0.06548797881269412
+    },
+    "without_imu": {
+      "name": "translation_No-IMU",
+      "total_frames": 1000,
+      "successful_detections": 1000,
+      "success_rate": 1.0,
+      "detection_failures": 0,
+      "avg_detection_time": 6.150885820388794,
+      "min_detection_time": 3.999471664428711,
+      "max_detection_time": 82.79633522033691,
+      "std_detection_time": 2.6494174488521027,
+      "median_detection_time": 5.980372428894043,
+      "method_distribution": {
+        "prosac": 1,
+        "refinement": 999
+      },
+      "primary_method": "refinement",
+      "avg_stability": 0.5533571714906395,
+      "angle_stability_std": 0.01654260239554259,
+      "position_stability_std": 0.04561424823249482,
+      "avg_confidence": 0.18487825318273685,
+      "confidence_std": 0.08052841723436661
+    },
+    "comparison": {
+      "speed_improvement_percent": -23.652484613072332,
+      "accuracy_improvement_percent": 0.0,
+      "stability_improvement_percent": 13.207960899553278,
+      "confidence_improvement_percent": -53.84133081561053,
+      "imu_method_diversity": 2,
+      "no_imu_method_diversity": 2
+    }
+  },
+  "vibration": {
+    "with_imu": {
+      "name": "vibration_IMU",
+      "total_frames": 1000,
+      "successful_detections": 1000,
+      "success_rate": 1.0,
+      "detection_failures": 0,
+      "avg_detection_time": 22.04062533378601,
+      "min_detection_time": 4.452705383300781,
+      "max_detection_time": 189.03183937072754,
+      "std_detection_time": 39.45355828654175,
+      "median_detection_time": 6.972074508666992,
+      "method_distribution": {
+        "prosac": 132,
+        "refinement": 741,
+        "refinement_imu": 127
+      },
+      "primary_method": "refinement",
+      "avg_stability": 0.3529528150772502,
+      "angle_stability_std": 0.30672702127276114,
+      "position_stability_std": 0.5632259009590898,
+      "avg_confidence": 0.09429387343085184,
+      "confidence_std": 0.05200031954802862,
+      "avg_imu_confidence": 0.5636331344616692,
+      "avg_tilt_angle": 68.83146158612293,
+      "max_tilt_angle": 101.38963369582075,
+      "imu_ready_rate": 0.247
+    },
+    "without_imu": {
+      "name": "vibration_No-IMU",
+      "total_frames": 1000,
+      "successful_detections": 1000,
+      "success_rate": 1.0,
+      "detection_failures": 0,
+      "avg_detection_time": 7.0352747440338135,
+      "min_detection_time": 4.28009033203125,
+      "max_detection_time": 87.14008331298828,
+      "std_detection_time": 5.919572698376818,
+      "median_detection_time": 6.312727928161621,
+      "method_distribution": {
+        "prosac": 8,
+        "refinement": 992
+      },
+      "primary_method": "refinement",
+      "avg_stability": 0.3865218053823492,
+      "angle_stability_std": 0.10510729775877356,
+      "position_stability_std": 0.2711014511301269,
+      "avg_confidence": 0.11116066500834688,
+      "confidence_std": 0.05918713657520837
+    },
+    "comparison": {
+      "speed_improvement_percent": -213.28734321964208,
+      "accuracy_improvement_percent": 0.0,
+      "stability_improvement_percent": -8.684889141478685,
+      "confidence_improvement_percent": -15.173345334186822,
+      "imu_method_diversity": 3,
+      "no_imu_method_diversity": 2
+    }
+  },
+  "mixed": {
+    "with_imu": {
+      "name": "mixed_IMU",
+      "total_frames": 1000,
+      "successful_detections": 1000,
+      "success_rate": 1.0,
+      "detection_failures": 0,
+      "avg_detection_time": 17.49435043334961,
+      "min_detection_time": 3.998994827270508,
+      "max_detection_time": 368.9746856689453,
+      "std_detection_time": 36.702924075189614,
+      "median_detection_time": 7.347583770751953,
+      "method_distribution": {
+        "prosac": 85,
+        "refinement": 908,
+        "refinement_imu": 6,
+        "hough": 1
+      },
+      "primary_method": "refinement",
+      "avg_stability": 0.39075936607557216,
+      "angle_stability_std": 0.20797476188528122,
+      "position_stability_std": 0.4675265407607736,
+      "avg_confidence": 0.10684291030648282,
+      "confidence_std": 0.08213239840238273,
+      "avg_imu_confidence": 0.20257760088878135,
+      "avg_tilt_angle": 114.36031519728503,
+      "max_tilt_angle": 168.40217289244114,
+      "imu_ready_rate": 0.013
+    },
+    "without_imu": {
+      "name": "mixed_No-IMU",
+      "total_frames": 1000,
+      "successful_detections": 1000,
+      "success_rate": 1.0,
+      "detection_failures": 0,
+      "avg_detection_time": 18.720351219177246,
+      "min_detection_time": 3.086566925048828,
+      "max_detection_time": 167.71984100341797,
+      "std_detection_time": 27.644954352552627,
+      "median_detection_time": 6.658196449279785,
+      "method_distribution": {
+        "prosac": 166,
+        "refinement": 834
+      },
+      "primary_method": "refinement",
+      "avg_stability": 0.3608233273510841,
+      "angle_stability_std": 0.3131147701005152,
+      "position_stability_std": 0.7580899106656954,
+      "avg_confidence": 0.10157237162110419,
+      "confidence_std": 0.0799009085890452
+    },
+    "comparison": {
+      "speed_improvement_percent": 6.549026626016043,
+      "accuracy_improvement_percent": 0.0,
+      "stability_improvement_percent": 8.296591837411906,
+      "confidence_improvement_percent": 5.188949121951533,
+      "imu_method_diversity": 4,
+      "no_imu_method_diversity": 2
+    }
+  }
+}

@@ -1,0 +1,8 @@
+{
+  "test_scenarios": [
+    "static",
+    "tilt_slow"
+  ],
+  "frames_per_test": 100,
+  "quick_mode": true
+}
