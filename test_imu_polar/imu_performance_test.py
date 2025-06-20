@@ -461,7 +461,7 @@ class PerformanceTestSuite:
         if comp['speed_improvement_percent'] > 20:
             print(" Significant speed improvement!")
         if comp['stability_improvement_percent'] > 15:
-            print("     🎯 Significant stability improvement!")
+            print("Significant stability improvement!")
     
     def _generate_final_report(self):
         """Generate comprehensive final report"""
@@ -482,7 +482,7 @@ class PerformanceTestSuite:
                 overall_stability_improvements.append(comp['stability_improvement_percent'])
         
         if overall_speed_improvements:
-            print(f"\n📈 OVERALL IMPROVEMENTS (IMU vs Non-IMU):")
+            print(f"\nOVERALL IMPROVEMENTS (IMU vs Non-IMU):")
             print(f"   Average speed improvement: {np.mean(overall_speed_improvements):+.1f}%")
             print(f"   Average accuracy improvement: {np.mean(overall_accuracy_improvements):+.1f}%")
             print(f"   Average stability improvement: {np.mean(overall_stability_improvements):+.1f}%")
