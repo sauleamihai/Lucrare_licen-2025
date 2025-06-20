@@ -1,9 +1,4 @@
 #!/usr/bin/env python3
-"""
-Fast Hybrid Plane Detector cu Filtrare Temporală și IMU Calibration
-Rezolvă problema persistenței obstacolelor și îmbunătățește detectarea planului cu IMU
-"""
-
 import math
 import argparse
 import sys
