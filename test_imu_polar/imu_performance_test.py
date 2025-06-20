@@ -1,9 +1,4 @@
 #!/usr/bin/env python3
-"""
-Performance Test Suite: IMU vs Non-IMU Plane Detection
-Tests accuracy, speed, stability, and robustness of both implementations
-"""
-
 import math
 import argparse
 import sys
