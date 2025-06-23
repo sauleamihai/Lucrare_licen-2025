@@ -622,9 +622,9 @@ def get_docker_command():
 # ────────── Entry Point ──────────
 
 if __name__ == "__main__":
-    print("🚀 Enhanced Polar Algorithm Remote Control API")
-    print(f"📊 Available Scripts: {len(ALLOWED_SCRIPTS)}")
-    print(f"📋 Available Profiles: {len(PROFILES)}")
-    print("🌐 Starting Flask server on 0.0.0.0:5000")
+    print("Enhanced Polar Algorithm Remote Control API")
+    print(f"Available Scripts: {len(ALLOWED_SCRIPTS)}")
+    print(f"Available Profiles: {len(PROFILES)}")
+    print("Starting Flask server on 0.0.0.0:5000")
     
     app.run(host="0.0.0.0", port=5000, debug=False)
