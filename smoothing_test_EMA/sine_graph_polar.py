@@ -1389,13 +1389,13 @@ def main():
         analyzer.save_results_json(output_dir)
         
         print("\n" + "=" * 50)
-        print("✅ Analysis Complete!")
+        print(" Analysis Complete!")
         print("=" * 50)
-        print(f"📊 Results saved to: {output_dir.absolute()}")
-        print(f"📈 Frames analyzed: {len(analyzer.timestamps)}")
-        print(f"🎯 Methods tested: {len(set().union(*[data['metrics'].keys() for data in analyzer.analysis_results.values()]))}")
-        print(f"📋 Report: realsense_analysis_report.md")
-        print("\n🔍 Generated visualizations:")
+        print(f" Results saved to: {output_dir.absolute()}")
+        print(f" Frames analyzed: {len(analyzer.timestamps)}")
+        print(f" Methods tested: {len(set().union(*[data['metrics'].keys() for data in analyzer.analysis_results.values()]))}")
+        print(f" Report: realsense_analysis_report.md")
+        print("\n Generated visualizations:")
         print("  • realsense_overview.png - Data collection overview")
         print("  • bin_X_Y_smoothing.png - Per-bin smoothing analysis")
         print("  • performance_analysis.png - Method performance rankings")
@@ -1404,7 +1404,7 @@ def main():
         print("  • parameter_sensitivity.png - Parameter tuning guide")
         
     except Exception as e:
-        print(f"\n❌ Error during analysis: {e}")
+        print(f"\n Error during analysis: {e}")
         print("Make sure your RealSense camera is properly connected and accessible.")
         raise
 
