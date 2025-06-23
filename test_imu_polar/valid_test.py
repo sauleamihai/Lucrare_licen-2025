@@ -23,13 +23,13 @@ def check_dependencies():
     for package in required_packages:
         try:
             __import__(package.replace('-', '_'))
-            print(f"✅ {package}")
+            print(f"{package}")
         except ImportError:
             missing_packages.append(package)
-            print(f"❌ {package} - MISSING")
+            print(f"{package} - MISSING")
     
     if missing_packages:
-        print(f"\n🔧 Installing missing packages: {', '.join(missing_packages)}")
+        print(f"\nInstalling missing packages: {', '.join(missing_packages)}")
         for package in missing_packages:
             subprocess.check_call([sys.executable, "-m", "pip", "install", package])
     
@@ -46,13 +46,13 @@ def check_file_structure():
     
     for filename, description in required_files.items():
         if os.path.exists(filename):
-            print(f"✅ {filename}")
+            print(f"{filename}")
         else:
             missing_files.append((filename, description))
-            print(f"❌ {filename} - {description}")
+            print(f"{filename} - {description}")
     
     if missing_files:
-        print("\n📝 Missing files:")
+        print("\nMissing files:")
         for filename, description in missing_files:
             print(f"   - {filename}: {description}")
         print("\nPlease ensure all required files are in the same directory.")
@@ -68,56 +68,56 @@ def check_realsense_connection():
         devices = ctx.query_devices()
         
         if len(devices) == 0:
-            print("⚠️  No RealSense devices found")
+            print(" No RealSense devices found")
             print("   Make sure your camera is connected and drivers are installed")
             return False
         
         for device in devices:
-            print(f"✅ Found RealSense device: {device.get_info(rs.camera_info.name)}")
+            print(f"Found RealSense device: {device.get_info(rs.camera_info.name)}")
             
             # Check for IMU capability
             sensors = device.query_sensors()
             has_imu = any(sensor.get_info(rs.camera_info.name) == 'Motion Module' for sensor in sensors)
             
             if has_imu:
-                print("   🎯 IMU supported")
+                print("IMU supported")
             else:
-                print("   ⚠️  No IMU detected (depth-only mode available)")
+                print("No IMU detected (depth-only mode available)")
         
         return True
         
     except Exception as e:
-        print(f"❌ RealSense check failed: {e}")
+        print(f"RealSense check failed: {e}")
         return False
 
 def test_import_structure():
     """Test if imports work correctly"""
-    print("\n🧪 Testing import structure...")
+    print("\nTesting import structure...")
     
     try:
         # Test basic imports
         import numpy as np
         import pyrealsense2 as rs
-        print("✅ Basic imports working")
+        print("Basic imports working")
         
         # Test IMU detector import
         from imu_plane_detector import FastHybridPlaneDetector, TemporalObstacleFilter, IMUCalibration
-        print("✅ IMU detector imports working")
+        print("IMU detector imports working")
         
         # Test instantiation
         imu_cal = IMUCalibration(enable_imu=False)
         detector = FastHybridPlaneDetector(imu_cal)
         filter_obj = TemporalObstacleFilter()
-        print("✅ Object instantiation working")
+        print("Object instantiation working")
         
         return True
         
     except ImportError as e:
-        print(f"❌ Import error: {e}")
+        print(f"Import error: {e}")
         print("   Check that 'imu_plane_detector.py' contains the required classes")
         return False
     except Exception as e:
-        print(f"❌ Instantiation error: {e}")
+        print(f"Instantiation error: {e}")
         return False
 
 def create_test_config():
@@ -132,37 +132,37 @@ def create_test_config():
         import json
         with open('test_config.json', 'w') as f:
             json.dump(config, f, indent=2)
-        print("✅ Created test_config.json for quick testing")
+        print("Created test_config.json for quick testing")
         return True
     except Exception as e:
-        print(f"❌ Failed to create config: {e}")
+        print(f"Failed to create config: {e}")
         return False
 
 def main():
     """Main setup function"""
-    print("🔧 Setting up IMU Performance Test Environment")
+    print("Setting up IMU Performance Test Environment")
     print("=" * 50)
     
-    print("\n1️⃣ Checking dependencies...")
+    print("\nChecking dependencies...")
     deps_ok = check_dependencies()
     
-    print("\n2️⃣ Checking file structure...")
+    print("\nChecking file structure...")
     files_ok = check_file_structure()
     
-    print("\n3️⃣ Checking RealSense connection...")
+    print("\nChecking RealSense connection...")
     camera_ok = check_realsense_connection()
     
     if files_ok:
-        print("\n4️⃣ Testing imports...")
+        print("\nTesting imports...")
         imports_ok = test_import_structure()
     else:
         imports_ok = False
     
-    print("\n5️⃣ Creating test configuration...")
+    print("\nCreating test configuration...")
     config_ok = create_test_config()
     
     print("\n" + "=" * 50)
-    print("🏁 SETUP SUMMARY")
+    print("SETUP SUMMARY")
     print("=" * 50)
     
     status_items = [
@@ -175,20 +175,20 @@ def main():
     
     all_ok = True
     for item, status in status_items:
-        icon = "✅" if status else "❌"
+        icon = "done" if status else "error"
         print(f"{icon} {item}")
         if not status:
             all_ok = False
     
     if all_ok:
-        print("\n🎉 Setup completed successfully!")
-        print("\n🚀 You can now run the performance test:")
+        print("\nSetup completed successfully!")
+        print("\n You can now run the performance test:")
         print("   python imu_performance_test.py --quick")
         print("   python imu_performance_test.py --frames 200")
     else:
-        print("\n⚠️  Setup incomplete. Please fix the issues above before running tests.")
+        print("\n  Setup incomplete. Please fix the issues above before running tests.")
         
-        print("\n💡 Common solutions:")
+        print("\n Common solutions:")
         if not files_ok:
             print("   - Make sure your IMU detector code is saved as 'imu_plane_detector.py'")
         if not camera_ok:
